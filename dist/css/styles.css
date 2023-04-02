@@ -2318,7 +2318,7 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  background-color: #fff;
+  background-color: #ffffff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   -webkit-appearance: none;
@@ -4914,14 +4914,14 @@ fieldset:disabled .btn {
 .card-body {
   flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
-  color: var(--bs-card-color);
+  color: #06357a;
 }
 
 .card-title {
   margin-bottom: var(--bs-card-title-spacer-y);
 }
 
-.card-subtitle {
+submit .card-subtitle {
   margin-top: calc(-0.5 * var(--bs-card-title-spacer-y));
   margin-bottom: 0;
 }
@@ -4937,7 +4937,7 @@ fieldset:disabled .btn {
 .card-header {
   padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
   margin-bottom: 0;
-  color: var(--bs-card-cap-color);
+  color: #0c4128;
   background-color: var(--bs-card-cap-bg);
   border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
 }
@@ -13214,6 +13214,7 @@ header h1 {
   margin-bottom: 1rem;
 }
 
+/* TASKS */
 #new-task-form {
   display: flex;
   ;
@@ -13262,9 +13263,9 @@ button {
 
 main {
   flex: 1 1 0%;
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
+  max-width: 500px;
+  width: 50%;
+  margin: 0 left;
 }
 
 .task-list {
@@ -13334,6 +13335,8 @@ main {
 .task .actions .delete {
   color: crimson;
 }
+
+
 
 #clock {
   font-family: Arial, sans-serif;
