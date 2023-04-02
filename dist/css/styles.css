@@ -13334,3 +13334,12 @@ main {
 .task .actions .delete {
   color: crimson;
 }
+
+#clock {
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  background-image: linear-gradient(to right, var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
