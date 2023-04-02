@@ -11,6 +11,11 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+
+    <!-- Firebase Auth (the Firebase authentication SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js"></script>
 </head>
 
 <body class="sb-nav-fixed">
@@ -40,7 +45,7 @@
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    <li><a class="dropdown-item" href="login.html">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -215,6 +220,42 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
         crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js";
+        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAvR3jH-fDs6B6qNM8I4eggyNc5eaR5VUo",
+            authDomain: "starwars-todo.firebaseapp.com",
+            projectId: "starwars-todo",
+            storageBucket: "starwars-todo.appspot.com",
+            messagingSenderId: "1060894464027",
+            appId: "1:1060894464027:web:f564a8f85b1419b5bbc0be",
+            measurementId: "G-TNGBLJTRQW"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        // Get the Firebase auth instance
+        const auth = getAuth();
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log("Logged in as:", user.email);
+            } else {
+                console.log("Not logged in");
+            }
+        });
+    </script>
 </body>
+
+
 
 </html>
